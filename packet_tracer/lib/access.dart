@@ -6,7 +6,16 @@ class Access extends StatefulWidget {
 
 class _AccessState extends State<Access> {
 
+  TextEditingController userController;
+  TextEditingController passController;
+
   final _formKey = GlobalKey<FormState>();
+
+  @override void initState() {
+    super.initState();
+    userController = new TextEditingController();
+    passController = new TextEditingController();
+  }
 
   @override Widget build(BuildContext context) {
     return Scaffold(
@@ -25,10 +34,10 @@ class _AccessState extends State<Access> {
               child: Form(
                 key: _formKey,
                 child: Column(
-                  //mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(height: MediaQuery.of(context).size.height / 40),
                     TextFormField(
+                      controller: userController,
                       validator: (value) => value.isEmpty ? "Please enter a username" : null,
                       decoration: InputDecoration(
                         labelText: "User",
@@ -37,6 +46,7 @@ class _AccessState extends State<Access> {
                     ),
                     SizedBox(height: MediaQuery.of(context).size.height / 30),
                     TextFormField(
+                      controller: passController,
                       validator: (value) => value.isEmpty ? "Please enter a password" : null,
                       decoration: InputDecoration(
                         labelText: "Password",
@@ -47,9 +57,12 @@ class _AccessState extends State<Access> {
                     ElevatedButton(
                       child: Text('Submit'),
                       onPressed: () {
+                        Navigator.of(context).pushReplacementNamed("/home");
+                        /*
                         if (_formKey.currentState.validate()) {
                           
                         }
+                        */
                       },
                     ),
                   ],

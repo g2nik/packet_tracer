@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:packet_tracer/access.dart';
+import 'package:packet_tracer/home.dart';
 import 'package:packet_tracer/splash.dart';
 
 void main() {
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": (BuildContext context) => Splash(),
         "/access": (BuildContext context) => Access(),
+        "/home": (BuildContext context) => Home(),
       }
     );
   }

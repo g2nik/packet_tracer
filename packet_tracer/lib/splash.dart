@@ -8,8 +8,9 @@ class _SplashState extends State<Splash> {
 
   Future load(BuildContext context) async {
     return Future.delayed(const Duration(seconds: 2), () {
-      setState(() {});
-      Navigator.pushReplacementNamed(context, "/access");
+      setState(() {
+        Navigator.pushReplacementNamed(context, "/access");
+      });
     });
   }
 

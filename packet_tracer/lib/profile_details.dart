@@ -1,54 +1,47 @@
 import 'package:flutter/material.dart';
-import 'package:packet_tracer/order.dart';
+import 'package:packet_tracer/profile.dart';
 import 'package:packet_tracer/widgets.dart';
 
-class OrderDetails extends StatefulWidget {
-  OrderDetails(this.order);
-  final Order order;
+class ProfileDetails extends StatefulWidget {
+  //ProfileDetails(this.profile);
+  //final Profile profile;
 
-  @override _OrderDetailsState createState() => _OrderDetailsState();
+  @override _ProfileDetailsState createState() => _ProfileDetailsState();
 }
 
-class _OrderDetailsState extends State<OrderDetails> {
+class _ProfileDetailsState extends State<ProfileDetails> {
   @override Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("ORDER DETAILS"),
-        actions: [
-          ProfileButton(),
-        ],
+        title: Text("PROFILE DETAILS"),
       ),
       body: ListView(
         children: [
           SizedBox(height: MediaQuery.of(context).size.height / 30),
           Text(
-            "ID#${widget.order.id}",
+            "USER ID",
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 30, color: Colors.grey, fontStyle: FontStyle.italic),
           ),
           SizedBox(height: MediaQuery.of(context).size.height / 30),
           Text(
-            widget.order.address,
+            "NAME",
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 30),
           ),
           SizedBox(height: MediaQuery.of(context).size.height / 40),
           Text(
-            widget.order.destinatary,
+            "PASSWORD",
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 20),
           ),
           SizedBox(height: MediaQuery.of(context).size.height / 40),
           Text(
-            "${widget.order.distance} KM",
+            "VEHICLE",
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 20),
           ),
         ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.map),
-        onPressed: () {},
       ),
     );
   }

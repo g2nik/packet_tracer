@@ -6,5 +6,4 @@ class Profile {
   bool darkMode;
 
   Profile({this.id, this.name, this.password});
-  
 }

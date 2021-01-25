@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "896920880970",
+    "project_id": "packet-tracer-13247",
+    "storage_bucket": "packet-tracer-13247.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:896920880970:android:b988d18c091fa4748ce3b3",
+        "android_client_info": {
+          "package_name": "com.example.packet_tracer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "896920880970-fiadv0qqoc4dlpgfc2paf3os383qa658.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBo8V9KpTJWYVYlag9xukl-7888Zd6cDRY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "896920880970-fiadv0qqoc4dlpgfc2paf3os383qa658.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

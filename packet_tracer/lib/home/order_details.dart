@@ -1,47 +1,54 @@
 import 'package:flutter/material.dart';
-import 'package:packet_tracer/profile.dart';
-import 'package:packet_tracer/widgets.dart';
+import 'package:packet_tracer/models/order.dart';
+import 'package:packet_tracer/widgets/widgets.dart';
 
-class ProfileDetails extends StatefulWidget {
-  //ProfileDetails(this.profile);
-  //final Profile profile;
+class OrderDetails extends StatefulWidget {
+  OrderDetails(this.order);
+  final Order order;
 
-  @override _ProfileDetailsState createState() => _ProfileDetailsState();
+  @override _OrderDetailsState createState() => _OrderDetailsState();
 }
 
-class _ProfileDetailsState extends State<ProfileDetails> {
+class _OrderDetailsState extends State<OrderDetails> {
   @override Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("PROFILE DETAILS"),
+        title: Text("ORDER DETAILS"),
+        actions: [
+          ProfileButton(),
+        ],
       ),
       body: ListView(
         children: [
           SizedBox(height: MediaQuery.of(context).size.height / 30),
           Text(
-            "USER ID",
+            "ID#${widget.order.id}",
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 30, color: Colors.grey, fontStyle: FontStyle.italic),
           ),
           SizedBox(height: MediaQuery.of(context).size.height / 30),
           Text(
-            "NAME",
+            widget.order.address,
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 30),
           ),
           SizedBox(height: MediaQuery.of(context).size.height / 40),
           Text(
-            "PASSWORD",
+            widget.order.destinatary,
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 20),
           ),
           SizedBox(height: MediaQuery.of(context).size.height / 40),
           Text(
-            "VEHICLE",
+            "${widget.order.distance} KM",
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 20),
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.map),
+        onPressed: () {},
       ),
     );
   }

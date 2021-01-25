@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:packet_tracer/services/auth.dart';
 
-class Access extends StatefulWidget {
-  @override _AccessState createState() => _AccessState();
+class SignUp extends StatefulWidget {
+  @override _SignUpState createState() => _SignUpState();
 }
 
-class _AccessState extends State<Access> {
+class _SignUpState extends State<SignUp> {
 
   TextEditingController userController;
   TextEditingController passController;
 
   final _formKey = GlobalKey<FormState>();
 
+  final AuthService _auth = AuthService();
+
   @override void initState() {
     super.initState();
-    userController = new TextEditingController();
-    passController = new TextEditingController();
+    userController = TextEditingController();
+    passController = TextEditingController();
   }
 
   @override Widget build(BuildContext context) {
@@ -56,12 +59,17 @@ class _AccessState extends State<Access> {
                     SizedBox(height: MediaQuery.of(context).size.height / 30),
                     ElevatedButton(
                       child: Text('Submit'),
-                      onPressed: () {
-                        Navigator.of(context).pushReplacementNamed("/home");
-                        /*
-                        if (_formKey.currentState.validate()) {
-                          
+                      onPressed: () async {
+                        dynamic result = await _auth.signInAnon();
+                        if (result == null) {
+                          print("Error signing up");
+                        } else {
+                          print("Signed up");
+                          print(result.uid);
                         }
+                        //Navigator.of(context).pushReplacementNamed("/home");
+                        /*
+                        if (_formKey.currentState.validate()) {}
                         */
                       },
                     ),

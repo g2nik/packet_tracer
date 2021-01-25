@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:packet_tracer/order.dart';
-import 'package:packet_tracer/widgets.dart';
+import 'package:packet_tracer/models/order.dart';
+import 'package:packet_tracer/widgets/widgets.dart';
 
 class Home extends StatefulWidget {
   @override _HomeState createState() => _HomeState();

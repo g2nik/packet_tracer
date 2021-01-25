@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:packet_tracer/order.dart';
-import 'package:packet_tracer/profile_details.dart';
-import 'package:packet_tracer/order_details.dart';
+import 'package:packet_tracer/models/order.dart';
+import 'package:packet_tracer/home/profile_details.dart';
+import 'package:packet_tracer/home/order_details.dart';
 
 class ProfileButton extends StatefulWidget {
   @override _ProfileButtonState createState() => _ProfileButtonState();
